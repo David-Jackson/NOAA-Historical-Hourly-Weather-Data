@@ -16,19 +16,13 @@ formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(messag
 logger_file_handler.setFormatter(formatter)
 logger.addHandler(logger_file_handler)
 
-try:
-    SOME_SECRET = os.environ["SOME_SECRET"]
-except KeyError:
-    SOME_SECRET = "Token not available!"
-    #logger.info("Token not available!")
-    #raise
-
-
 if __name__ == "__main__":
-    logger.info(f"Token value: {SOME_SECRET}")
 
-    r = requests.get('https://weather.talkpython.fm/api/weather/?city=Berlin&country=DE')
+    wmo = "723100"
+    
+    r = requests.post('http://ashrae-meteo.info/v2.0/request_meteo_parametres.php', json={"wmo": wmo, "ashrae_version": "2021", "si_ip": "IP"})
+    
     if r.status_code == 200:
         data = r.json()
-        temperature = data["forecast"]["temp"]
-        logger.info(f'Weather in Berlin: {temperature}')
+        place = data["place"]
+        logger.info(f'WMO {wmo}: {place}')
