@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     wmo = "723100"
     
-    with open('stations.json', 'r') as f:
+    with open('scripts/stations.json', 'r') as f:
         stations = json.load(f)
 
     filtered_stations = filter(lambda x: x['wmo'] == wmo, stations)
