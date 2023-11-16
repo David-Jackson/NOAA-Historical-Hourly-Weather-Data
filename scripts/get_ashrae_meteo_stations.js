@@ -1,5 +1,4 @@
-// Script needs to be run on each of the `http://ashrae-meteo.info/v2.0` stations pages. 
-// At the time of writing, there are Asia, North America, Latin America, Australia and Oceania, Europe, Africa, Antarctica pages.
+// Run on page like http://ashrae-meteo.info/v2.0/places.php?continent=North%20America
 
 // Stations Pages
 // http://ashrae-meteo.info/v2.0/places.php?continent=Asia
@@ -10,9 +9,48 @@
 // http://ashrae-meteo.info/v2.0/places.php?continent=Africa
 // http://ashrae-meteo.info/v2.0/places.php?continent=Antarctica
 
-function getAllStations() {
-    var links = document.querySelectorAll('#accordion a[target=_blank]');
-    var accordian = document.getElementById('accordion');
+
+async function loadStationPages() {
+
+    var allStations = []
+    
+    var stationPages = [
+        "http://ashrae-meteo.info/v2.0/places.php?continent=Asia",
+        "http://ashrae-meteo.info/v2.0/places.php?continent=North%20America",
+        "http://ashrae-meteo.info/v2.0/places.php?continent=Latin%20America",
+        "http://ashrae-meteo.info/v2.0/places.php?continent=Australia%20and%20Oceania",
+        "http://ashrae-meteo.info/v2.0/places.php?continent=Europe",
+        "http://ashrae-meteo.info/v2.0/places.php?continent=Africa",
+        "http://ashrae-meteo.info/v2.0/places.php?continent=Antarctica",
+    ]
+
+    for (var i = 0; i < stationPages.length; i++) {
+    
+        var url = stationPages[i];
+
+        console.log("Loading", url);
+        
+        var response = await fetch(url);
+        var text = await response.text();
+    
+        var parser = new DOMParser();
+        var htmlDoc = parser.parseFromString(text, 'text/html');
+    
+        var newStations = getAllStations(htmlDoc);
+
+        console.log("Found", newStations.length, "new stations");
+    
+        allStations = allStations.concat(newStations);
+
+    }
+
+    return allStations;
+
+}
+
+function getAllStations(htmlDoc) {
+    var links = htmlDoc.body.querySelectorAll('#accordion a[target=_blank]');
+    var accordian = htmlDoc.getElementById('accordion');
 
     var stations = [];
     
@@ -46,4 +84,4 @@ function getAllStations() {
     return stations;
 }
 
-getAllStations();
+await loadStationPages();
