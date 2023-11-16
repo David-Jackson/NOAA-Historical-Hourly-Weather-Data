@@ -26,5 +26,5 @@ if __name__ == "__main__":
 
     filtered_stations = filter(lambda x: x['wmo'] == wmo, stations)
 
-    for (x in filtered_stations):
+    for x in filtered_stations:
         logger.info(f'WMO {wmo}: {json.dumps(x)}')
