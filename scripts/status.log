@@ -1,3 +1,4 @@
 2023-11-10 20:57:37,111 - __main__ - INFO - Token value: 
 2023-11-10 20:57:37,649 - __main__ - INFO - Weather in Berlin: 7.33
 2023-11-16 20:40:54,970 - __main__ - INFO - WMO 723100: Request Status Code: 500
+2023-11-16 21:57:55,715 - __main__ - INFO - WMO 723100: {"name": "COLUMBIA METRO", "lat": "33.942", "lng": "-81.118", "wmo": "723100", "parents": ["South Carolina", "United States"]}
