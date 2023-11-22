@@ -20,3 +20,4 @@ Here files that are downloaded from []() can be placed so they can e automatical
 10. Enter your email address so you can be notified when the data is ready to be downloaded.
 11. Select `Submit Order`
 12. Once the data is collected, you will receive and email with a download link. That link should download a `.csv` file with the name being the order number. This is the file that can be uploaded into this raw data folder.
+13. Within a few minutes of upload, a Github Actions script should run. This script processes the large raw file, parses out invalid data, and creates a new file under the [`data`](https://github.com/David-Jackson/NOAA-Historical-Hourly-Weather-Data/tree/main/data) directory. The script will also delete the raw file to save on space.
