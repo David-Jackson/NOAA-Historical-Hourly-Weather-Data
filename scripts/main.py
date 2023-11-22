@@ -26,10 +26,56 @@ logger_console_handler.setFormatter(formatter)
 logger.addHandler(logger_file_handler)
 logger.addHandler(logger_console_handler)
 
+def filter_data(data):
+    
+    old_len = len(data.index)
+
+    # Filter the data accordingly.
+    data = data[data['REPORT_TYPE'] == 'FM-15']
+
+    data = data[data['HourlyDryBulbTemperature'] != '']
+    data = data[data['HourlyDewPointTemperature'] != '']
+
+    # remove wierd values that end with "s" for some reason
+    data = data[pd.to_numeric(data['HourlyDryBulbTemperature'], errors='coerce').notnull()]
+    data = data[pd.to_numeric(data['HourlyDewPointTemperature'], errors='coerce').notnull()]
+
+    data = data[
+        [
+            # 'STATION',
+            'DATE',
+            # 'REPORT_TYPE',
+            'HourlyDewPointTemperature',
+            'HourlyDryBulbTemperature', 
+            'HourlyRelativeHumidity'
+        ]
+    ]
+    new_len = len(data.index)
+
+    print(str(old_len), "->", str(new_len))
+
+    return data
+
 def get_wmo_from_csv(data):
     stations = data.drop_duplicates('STATION')
     return stations['STATION'].to_numpy()
 
+def get_date_range_from_csv(df):
+    # Convert the 'DATE' column to datetime objects
+    df['DATE'] = pd.to_datetime(df['DATE'])
+
+    # Find the earliest and latest timestamps
+    earliest_timestamp = df['DATE'].min()
+    latest_timestamp = df['DATE'].max()
+    
+    # Extract the earliest and latest years
+    earliest_year = earliest_timestamp.year
+    latest_year = latest_timestamp.year
+
+    # Calculate the number of years covered
+    years_covered = (latest_timestamp - earliest_timestamp).days / 365.25
+
+    return f"{years_covered:.0f}yr ({earliest_year}-{latest_year})"
 
 if __name__ == "__main__":
 
@@ -45,6 +91,10 @@ if __name__ == "__main__":
 
         wmo_list = get_wmo_from_csv(data)
 
+        date_range_str = get_date_range_from_csv(data)
+
+        data = filter_data(data)
+
         if len(wmo_list) > 1:
             logger.warning(f'Found {len(wmo_list)} Station Numbers in {filename}, using {wmo_list[0]}')
 
@@ -57,8 +107,11 @@ if __name__ == "__main__":
 
         station = filtered_stations[0]
 
-        location_str = station['name'] + ' - ' + ', '.join(station['parents'])
+        location_str = ', '.join([station['name']] + station['parents'])
 
-        new_filename = wmo + ' - ' + location_str
+        new_filename = f'{wmo} - {date_range_str} - {location_str}'
 
         logger.info(f'Creating new File: {new_filename}')
+
+        data.to_csv(f'data/{new_filename}.csv', index=False)
+        
