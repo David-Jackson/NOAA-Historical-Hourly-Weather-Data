@@ -114,4 +114,8 @@ if __name__ == "__main__":
         logger.info(f'Creating new File: {new_filename}')
 
         data.to_csv(f'data/{new_filename}.csv', index=False)
+
+        if os.path.exists(filename):
+            os.remove(filename)
+            print(f"The file {filename} has been deleted.")
         
