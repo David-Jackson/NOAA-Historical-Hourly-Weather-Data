@@ -26,3 +26,21 @@
 2023-11-22 15:09:27,881 - __main__ - INFO - Creating new File: 724463 - 10yr (2012-2021) - KANSAS CITY WHEELER, Missouri, United States
 2023-11-22 15:09:28,075 - __main__ - INFO - Processing raw/2994603.csv
 2023-11-22 15:09:29,079 - __main__ - INFO - Creating new File: 724340 - 10yr (2012-2021) - ST LOUIS LAMBERT, Missouri, United States
+2023-11-22 15:23:43,229 - __main__ - INFO - Processing raw/3228097.csv
+2023-11-22 15:23:44,328 - __main__ - INFO - Creating new File: 722950 - 10yr (2013-2022) - LOS ANGELES INTL, California, United States
+2023-11-22 15:23:44,530 - __main__ - INFO - Processing raw/3513508.csv
+2023-11-22 15:23:45,667 - __main__ - INFO - Creating new File: 723100 - 10yr (2013-2022) - COLUMBIA METRO, South Carolina, United States
+2023-11-22 15:23:45,866 - __main__ - INFO - Processing raw/3423995.csv
+2023-11-22 15:23:46,953 - __main__ - INFO - Creating new File: 723270 - 10yr (2013-2022) - NASHVILLE INTL, Tennessee, United States
+2023-11-22 15:23:47,164 - __main__ - INFO - Processing raw/3146555.csv
+2023-11-22 15:23:48,343 - __main__ - INFO - Creating new File: 722640 - 10yr (2012-2021) - MARFA, Texas, United States
+2023-11-22 15:23:48,658 - __main__ - INFO - Processing raw/3423997.csv
+2023-11-22 15:23:49,459 - __main__ - INFO - Creating new File: 723273 - 10yr (2013-2022) - SMYRNA, Tennessee, United States
+2023-11-22 15:23:49,704 - __main__ - INFO - Processing raw/3362061.csv
+2023-11-22 15:23:50,411 - __main__ - INFO - Creating new File: 725375 - 8yr (2015-2022) - DETROIT CITY, Michigan, United States
+2023-11-22 15:23:50,581 - __main__ - INFO - Processing raw/3424428.csv
+2023-11-22 15:23:51,945 - __main__ - INFO - Creating new File: 723270 - 10yr (2003-2012) - NASHVILLE INTL, Tennessee, United States
+2023-11-22 15:23:52,146 - __main__ - INFO - Processing raw/3424421.csv
+2023-11-22 15:23:52,228 - __main__ - INFO - Creating new File: 723270 - 1yr (2022-2023) - NASHVILLE INTL, Tennessee, United States
+2023-11-22 15:23:52,240 - __main__ - INFO - Processing raw/3508322.csv
+2023-11-22 15:23:53,160 - __main__ - INFO - Creating new File: 724880 - 10yr (2013-2022) - RENO-TAHOE, Nevada, United States
