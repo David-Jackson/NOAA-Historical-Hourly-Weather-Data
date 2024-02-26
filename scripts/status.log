@@ -44,3 +44,7 @@
 2023-11-22 15:23:52,228 - __main__ - INFO - Creating new File: 723270 - 1yr (2022-2023) - NASHVILLE INTL, Tennessee, United States
 2023-11-22 15:23:52,240 - __main__ - INFO - Processing raw/3508322.csv
 2023-11-22 15:23:53,160 - __main__ - INFO - Creating new File: 724880 - 10yr (2013-2022) - RENO-TAHOE, Nevada, United States
+2024-02-26 15:53:25,095 - __main__ - INFO - Processing raw/3613030.csv
+2024-02-26 15:53:26,299 - __main__ - INFO - Creating new File: 726375 - 10yr (2014-2023) - OAKLAND COUNTY INTL, Michigan, United States
+2024-02-26 15:53:26,473 - __main__ - INFO - Processing raw/3613024.csv
+2024-02-26 15:53:27,696 - __main__ - INFO - Creating new File: 723270 - 10yr (2014-2023) - NASHVILLE INTL, Tennessee, United States
