@@ -20,3 +20,8 @@ A collection of historical hourly weather data with automatic processing
 10. Enter your email address so you can be notified when the data is ready to be downloaded.
 11. Select `Submit Order`
 12. Once the data is collected, you will receive and email with a download link. That link should download a `.csv` file with the name being the order number. This is the file that can be uploaded into this raw data folder.
+
+
+## Limitations
+
+The method listed is only available for weather stations that are located in the United States. For other countries weather data, like Mexico or Canada, the best method I have found has been using Weather Underground's historical weather data. See the [WeatherUnderground-Historical-Hourly-Weather-Data repo](https://github.com/David-Jackson/WeatherUnderground-Historical-Hourly-Weather-Data) for more information.
