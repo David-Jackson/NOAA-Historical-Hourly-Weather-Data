@@ -50,3 +50,5 @@
 2024-02-26 15:53:27,696 - __main__ - INFO - Creating new File: 723270 - 10yr (2014-2023) - NASHVILLE INTL, Tennessee, United States
 2024-06-03 15:31:59,053 - __main__ - INFO - Processing raw/3706197.csv
 2024-06-03 15:32:00,152 - __main__ - INFO - Creating new File: 724340 - 10yr (2014-2023) - ST LOUIS LAMBERT, Missouri, United States
+2024-11-27 09:11:33,546 - __main__ - INFO - Processing raw\3854839.csv
+2024-11-27 09:11:34,858 - __main__ - INFO - Creating new File: 723120 - 10yr (2014-2023) - GREENVILLE-SPARTANBURG, South Carolina, United States
